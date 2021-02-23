@@ -1,0 +1,17 @@
+FROM ritclizup/rit-perl-runner
+
+USER root
+
+RUN apk --no-cache add perl perl-utils
+
+RUN mkdir /rit
+COPY . /rit
+RUN sed -i 's/\r//g' /rit/set_umask.sh
+RUN sed -i 's/\r//g' /rit/run.sh
+RUN chmod +x /rit/set_umask.sh
+
+# ENV PERL5LIB=/rit
+
+WORKDIR /app
+ENTRYPOINT ["/rit/set_umask.sh"]
+CMD ["/rit/run.sh"]
