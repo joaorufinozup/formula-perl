@@ -10,7 +10,7 @@ perl-build:
 	cp -r src/* $(BIN_FOLDER)
 	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'if [ -f /.dockerenv ] ; then' >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo '	export PERL5LIB=/rit' >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+	echo '	export PERL5LIB=/rit/bin' >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'fi' >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'perl "$$(dirname "$$0")"/main.pl' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'perl main.pl' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
