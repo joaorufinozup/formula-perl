@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 use warnings;
 use strict;
-use lib './';
 use Formula::Formula;
 
 my $ritInputText = $ENV{'RIT_INPUT_TEXT'};
@@ -10,7 +9,4 @@ my $ritInputList = $ENV{'RIT_INPUT_LIST'};
 my $ritInputPass = $ENV{'RIT_INPUT_PASSWORD'};
 
 Formula::run($ritInputText, $ritInputBoolean, $ritInputList, $ritInputPass);
-# my $perlLib = $ENV{'PERL5LIB'};
-
-# print "PERL5LIB: $perlLib\n";
 
